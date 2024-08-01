@@ -2,7 +2,7 @@
 
 void push(stack_t **stack, unsigned int line_number, int n)
 {
-	(void)line_number; // Mark the line_number as unused to avoid warnings
+	(void)line_number;
 
 	stack_t *new_node = malloc(sizeof(stack_t));
 	if (!new_node)
@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int line_number, int n)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number; // Mark the line_number as unused to avoid warnings
+	(void)line_number;
 
 	stack_t *current = *stack;
 

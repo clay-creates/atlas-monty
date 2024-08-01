@@ -2,6 +2,7 @@
 
 void push(stack_t **stack, unsigned int line_number, int n)
 {
+    (void)line_number;
     stack_t *new_node = malloc(sizeof(stack_t));
     if (!new_node)
     {
@@ -20,6 +21,7 @@ void push(stack_t **stack, unsigned int line_number, int n)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
+    (void)line_number;
     stack_t *current = *stack;
 
     while (current)
@@ -31,6 +33,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 void pint(stack_t **stack, unsigned int line_number)
 {
+    (void)line_number;
     if (!*stack)
     {
         fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
@@ -41,6 +44,7 @@ void pint(stack_t **stack, unsigned int line_number)
 
 void pop(stack_t **stack, unsigned int line_number)
 {
+    (void)line_number;
     stack_t *temp;
 
     if (!*stack)
@@ -60,6 +64,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 void swap(stack_t **stack, unsigned int line_number)
 {
+    (void)line_number;
     int temp;
 
     if (!*stack || !(*stack)->next)
@@ -75,6 +80,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 void add(stack_t **stack, unsigned int line_number)
 {
+    (void)line_number;
     int sum;
 
     if (!*stack || !(*stack)->next)

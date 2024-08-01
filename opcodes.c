@@ -87,3 +87,9 @@ void add(stack_t **stack, unsigned int line_number)
     pop(stack, line_number);
     (*stack)->n = sum;
 }
+
+void nop(stack_t **stack, unsigned int line_number)
+{
+    (void)stack;
+    (void)line_number;
+}

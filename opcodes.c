@@ -2,7 +2,8 @@
 
 void push(stack_t **stack, unsigned int line_number, int n)
 {
-    (void)line_number;
+    (void)line_number; // Mark the line_number as unused to avoid warnings
+
     stack_t *new_node = malloc(sizeof(stack_t));
     if (!new_node)
     {
@@ -13,15 +14,14 @@ void push(stack_t **stack, unsigned int line_number, int n)
     new_node->prev = NULL;
     new_node->next = *stack;
     if (*stack)
-    {
         (*stack)->prev = new_node;
-    }
     *stack = new_node;
 }
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-    (void)line_number;
+    (void)line_number; // Mark the line_number as unused to avoid warnings
+
     stack_t *current = *stack;
 
     while (current)
@@ -33,7 +33,6 @@ void pall(stack_t **stack, unsigned int line_number)
 
 void pint(stack_t **stack, unsigned int line_number)
 {
-    (void)line_number;
     if (!*stack)
     {
         fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
@@ -44,7 +43,6 @@ void pint(stack_t **stack, unsigned int line_number)
 
 void pop(stack_t **stack, unsigned int line_number)
 {
-    (void)line_number;
     stack_t *temp;
 
     if (!*stack)
@@ -56,15 +54,12 @@ void pop(stack_t **stack, unsigned int line_number)
     temp = *stack;
     *stack = (*stack)->next;
     if (*stack)
-    {
         (*stack)->prev = NULL;
-    }
     free(temp);
 }
 
 void swap(stack_t **stack, unsigned int line_number)
 {
-    (void)line_number;
     int temp;
 
     if (!*stack || !(*stack)->next)
@@ -80,7 +75,6 @@ void swap(stack_t **stack, unsigned int line_number)
 
 void add(stack_t **stack, unsigned int line_number)
 {
-    (void)line_number;
     int sum;
 
     if (!*stack || !(*stack)->next)
